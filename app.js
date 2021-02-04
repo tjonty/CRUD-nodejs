@@ -27,12 +27,12 @@ function connectDB() {
     });
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection'));
-    db.once('open', function callbacl() {
+    db.once('open', function callback() {
         console.log("database connected");
     });
 }
 
-//connect to node
+//connect to node at port
 const port = process.argv[2] || process.env.port;
 if (!port) {
     throw new Error("port is missing");
